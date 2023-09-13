@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Frontend</title>
+</head>
+<body>
+  <h1>Simple Frontend</h1>
+  <button id="getGreeting">Get Greeting from Backend</button>
+  <p id="greeting"></p>
+
+  <script>
+    document.getElementById('getGreeting').addEventListener('click', () => {
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting;
+
+      if (hour >= 0 && hour < 12) {
+        greeting = "Good morning!";
+      } else if (hour >= 12 && hour < 17) {
+        greeting = "Good afternoon!";
+      } else {
+        greeting = "Good evening!";
+      }
+
+      // Update the greeting message on the page without making an API request
+      document.getElementById('greeting').textContent = greeting;
+    });
+  </script>
+</body>
+</html>
